@@ -25,14 +25,22 @@ const routes: Routes = [
     loadChildren: () => import('./pages/signup/signup.module').then(m => m.SignUpModule)
   },
   {
-    path: 'app',
-    loadChildren: () => import('./pages/tabs-page/tabs-page.module').then(m => m.TabsModule)
-  },
-  {
     path: 'tutorial',
     loadChildren: () => import('./pages/tutorial/tutorial.module').then(m => m.TutorialModule),
     canLoad: [CheckTutorial]
-  }
+  },
+  {
+    path: 'schedule',
+    loadChildren: () => import('./pages/schedule/schedule.module').then(m => m.ScheduleModule)
+  },
+  {
+    path: 'about',
+    loadChildren: () => import('./pages/about/about.module').then(m => m.AboutModule)
+  },
+  {
+    path: 'speakers',
+    loadChildren: () => import('./pages/speaker-list/speaker-list.module').then(m => m.SpeakerListModule)
+  },
 ];
 
 @NgModule({
