@@ -5,7 +5,7 @@ import { CheckTutorial } from './providers/check-tutorial.service';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'tutorial',
+    redirectTo: '/tutorial',
     pathMatch: 'full'
   },
   {
@@ -34,6 +34,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/schedule/schedule.module').then(m => m.ScheduleModule)
   },
   {
+    path: 'map',
+    loadChildren: () => import('./pages/map/map.module').then(m => m.MapModule)
+  },
+  {
     path: 'about',
     loadChildren: () => import('./pages/about/about.module').then(m => m.AboutModule)
   },
@@ -41,6 +45,11 @@ const routes: Routes = [
     path: 'speakers',
     loadChildren: () => import('./pages/speaker-list/speaker-list.module').then(m => m.SpeakerListModule)
   },
+  {
+    path: 'nav',
+    loadChildren: () => import('./pages/nav-page/nav-page.module').then( m => m.NavPagePageModule)
+  },
+
 ];
 
 @NgModule({
