@@ -3,15 +3,38 @@
         <ion-buttons slot="end">
             <ion-menu-button></ion-menu-button>
         </ion-buttons>
-        <ion-title>Nav</ion-title>
+        <ion-title>Nawigacja do twojej starej</ion-title>
     </ion-toolbar>
 </ion-header>
 
 <ion-content fullscreen="true">
 
+    <ion-button routerLink="/support" routerLinkActive="active" routerDirection="root" detail="false">
+        <div>
+            <ion-icon slot="start" name="help"></ion-icon> <br>
 
-
-
+            <ion-label>
+                xd </ion-label>
+        </div>
+    </ion-button>
 
 
 </ion-content>
+
+<ion-footer>
+    <section>
+        <ion-grid>
+            <ion-row class="ion-justify-content-center">
+                <ion-col class="ion-align-self-center">
+                    <ion-button color="danger" expand="block" size="default" fill="solid">CANCEL</ion-button>
+                </ion-col>
+                <ion-col class="ion-align-self-center">
+                    <ion-button color="primary" expand="block" size="default" fill="solid">EDIT</ion-button>
+                </ion-col>
+                <ion-col class="ion-align-self-center">
+                    <ion-button color="success" expand="block" size="default" fill="solid">NEXT</ion-button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </section>
+</ion-footer>
