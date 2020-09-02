@@ -1,0 +1,10 @@
+ion-col {
+    max-width: 33%;
+}
+
+ion-content {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: small;
+}

@@ -9,32 +9,85 @@
 
 <ion-content fullscreen="true">
 
-    <ion-button routerLink="/support" routerLinkActive="active" routerDirection="root" detail="false">
-        <div>
-            <ion-icon slot="start" name="help"></ion-icon> <br>
-
-            <ion-label>
-                xd </ion-label>
-        </div>
-    </ion-button>
 
 
 </ion-content>
 
 <ion-footer>
-    <section>
-        <ion-grid>
-            <ion-row class="ion-justify-content-center">
-                <ion-col class="ion-align-self-center">
-                    <ion-button color="danger" expand="block" size="default" fill="solid">CANCEL</ion-button>
-                </ion-col>
-                <ion-col class="ion-align-self-center">
-                    <ion-button color="primary" expand="block" size="default" fill="solid">EDIT</ion-button>
-                </ion-col>
-                <ion-col class="ion-align-self-center">
-                    <ion-button color="success" expand="block" size="default" fill="solid">NEXT</ion-button>
-                </ion-col>
-            </ion-row>
-        </ion-grid>
-    </section>
+    <ion-row>
+        <ion-col routerLink="/support">
+            <div class="ion-text-center">
+                <ion-icon size="large" name="location-outline"></ion-icon>
+                <br> Miejsca
+            </div>
+        </ion-col>
+
+        <ion-col routerLink="/support">
+            <div class="ion-text-center">
+                <ion-icon size="large" name="calendar-outline">></ion-icon>
+                <br> Wydarzenia
+            </div>
+        </ion-col>
+
+        <ion-col routerLink="/support">
+            <div class="ion-text-center">
+                <ion-icon size="large" name="trail-sign-outline"></ion-icon>
+                <br> Trasy
+            </div>
+        </ion-col>
+
+
+
+    </ion-row>
+    <ion-row>
+        <ion-col routerLink="/support">
+            <div class="ion-text-center">
+                <ion-icon size="large" name="headset-outline"></ion-icon>
+                <br> Audioprzewodnik
+            </div>
+        </ion-col>
+
+        <ion-col routerLink="/support">
+            <div class="ion-text-center">
+                <ion-icon size="large" name="bookmarks-outline"></ion-icon>
+                <br> Planer
+            </div>
+        </ion-col>
+
+        <ion-col routerLink="/support">
+            <div class="ion-text-center">
+                <ion-icon size="large" name="qr-code-outline"></ion-icon>
+                <br> SkanerQR
+            </div>
+        </ion-col>
+
+
+
+    </ion-row>
+
+    <ion-row>
+        <ion-col routerLink="/support">
+            <div class="ion-text-center">
+                <ion-icon size="large" name="navigate-outline"></ion-icon>
+                <br> Mapa
+            </div>
+        </ion-col>
+
+        <ion-col routerLink="/support">
+            <div class="ion-text-center">
+                <ion-icon size="large" name="information-outline"></ion-icon>
+                <br> Informacja
+            </div>
+        </ion-col>
+
+        <ion-col routerLink="/support">
+            <div class="ion-text-center">
+                <ion-icon size="large" name="refresh-outline"></ion-icon>
+                <br> Synchronizacja
+            </div>
+        </ion-col>
+
+
+
+    </ion-row>
 </ion-footer>
