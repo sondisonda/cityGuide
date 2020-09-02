@@ -2,11 +2,12 @@ ion-col {
     max-width: 33%;
 }
 
-div {
+div.ion-text-center {
     color: rgba(240, 240, 240, 0.8);
     opacity: 0.8;
     border-radius: 10px;
-    padding: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     background: rgb(27, 14, 9);
     overflow: hidden;
     text-overflow: ellipsis;
@@ -15,7 +16,13 @@ div {
     transition-duration: 0.4s;
 }
 
-div:active {
+div.ion-text-center :active {
     color: white;
     opacity: 1;
+}
+
+div.footer{
+    width: 100%;
+    position: absolute;
+    bottom: 5px;
 }
