@@ -28,8 +28,8 @@ export class ConferenceData {
     // build up the data by linking places to sessions
     this.data = data;
 
-    // loop through each day in the schedule
-    this.data.schedule.forEach((day: any) => {
+    // loop through each day in the events
+    this.data.events.forEach((day: any) => {
       // loop through each timeline group in the day
       day.groups.forEach((group: any) => {
         // loop through each session in the timeline group
@@ -62,7 +62,7 @@ export class ConferenceData {
   ) {
     return this.load().pipe(
       map((data: any) => {
-        const day = data.schedule[dayIndex];
+        const day = data.events[dayIndex];
         day.shownSessions = 0;
 
         queryText = queryText.toLowerCase().replace(/,|\.|-/g, ' ');

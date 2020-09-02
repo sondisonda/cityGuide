@@ -31,39 +31,6 @@ _Note: See [How to Prevent Permissions Errors](https://docs.npmjs.com/getting-st
 See [CONTRIBUTING.md](https://github.com/ionic-team/ionic-conference-app/blob/master/.github/CONTRIBUTING.md) :tada::+1:
 
 
-## App Preview
-
-### [Menu](https://github.com/ionic-team/ionic-conference-app/blob/master/src/app/pages/menu/menu.html)
-
-| Material Design  | iOS  |
-| -----------------| -----|
-| ![Android Menu](/resources/screenshots/android-menu.png) | ![iOS Menu](/resources/screenshots/ios-menu.png) |
-
-
-### [Schedule Page](https://github.com/ionic-team/ionic-conference-app/blob/master/src/app/pages/schedule/schedule.html)
-
-| Material Design  | iOS  |
-| -----------------| -----|
-| ![Android Schedule](/resources/screenshots/android-schedule.png) | ![iOS Schedule](/resources/screenshots/ios-schedule.png) |
-
-### [Places Page](https://github.com/ionic-team/ionic-conference-app/blob/master/src/app/pages/place-list/place-list.html)
-
-| Material Design  | iOS  |
-| -----------------| -----|
-| ![Android Places](/resources/screenshots/android-places.png) | ![iOS Place](/resources/screenshots/ios-places.png) |
-
-### [Place Detail Page](https://github.com/ionic-team/ionic-conference-app/blob/master/src/app/pages/place-detail/place-detail.html)
-
-| Material Design  | iOS  |
-| -----------------| -----|
-| ![Android Place Detail](/resources/screenshots/android-place-detail.png) | ![iOS Place Detail](/resources/screenshots/ios-place-detail.png) |
-
-### [About Page](https://github.com/ionic-team/ionic-conference-app/blob/master/src/app/pages/about/about.html)
-
-| Material Design  | iOS  |
-| -----------------| -----|
-| ![Android About](/resources/screenshots/android-about.png) | ![iOS About](/resources/screenshots/ios-about.png) |
-
 
 ## Deploying
 

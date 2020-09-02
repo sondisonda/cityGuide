@@ -22,10 +22,6 @@ const routes: Routes = [
     canLoad: [CheckTutorial]
   },
   {
-    path: 'schedule',
-    loadChildren: () => import('./pages/schedule/schedule.module').then(m => m.ScheduleModule)
-  },
-  {
     path: 'map',
     loadChildren: () => import('./pages/map/map.module').then(m => m.MapModule)
   },
@@ -41,6 +37,15 @@ const routes: Routes = [
     path: 'nav',
     loadChildren: () => import('./pages/nav-page/nav-page.module').then( m => m.NavPagePageModule)
   },
+  {
+    path: 'events',
+    loadChildren: () => import('./pages/event-list/event-list.module').then( m => m.EventListPageModule)
+  },
+  {
+    path: 'event-detail',
+    loadChildren: () => import('./pages/event-detail/event-detail.module').then( m => m.EventDetailPageModule)
+  },
+
 
 ];
 
