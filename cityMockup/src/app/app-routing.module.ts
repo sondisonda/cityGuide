@@ -41,7 +41,7 @@ const routes: Routes = [
         loadChildren: () => import('./pages/session-detail/session-detail.module').then(m => m.SessionDetailModule)
       },
       {
-        path: 'place-details/:speakerId',
+        path: 'place-details/:placeId',
         loadChildren: () => import('./pages/place-detail/place-detail.module').then(m => m.PlaceDetailModule)
       }]
   },

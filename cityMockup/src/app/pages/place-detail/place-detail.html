@@ -2,13 +2,13 @@
     <ion-header class="ion-no-border">
         <ion-toolbar>
             <ion-buttons slot="start">
-                <ion-back-button defaultHref="/place-list"></ion-back-button>
+                <ion-back-button defaultHref="place-list"></ion-back-button>
             </ion-buttons>
             <ion-buttons *ngIf="place" slot="end">
                 <ion-button (click)="openContact(place)">
                     <ion-icon slot="icon-only" ios="call-outline" md="call-sharp"></ion-icon>
                 </ion-button>
-                <ion-button (click)="openplaceShare(place)">
+                <ion-button (click)="openPlaceShare(place)">
                     <ion-icon slot="icon-only" ios="share-outline" md="share-sharp"></ion-icon>
                 </ion-button>
             </ion-buttons>

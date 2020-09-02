@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { PlaceDetailPage } from './place-detail';
-import { PlaceDetailPageRoutingModule } from './place-detail-routing.module';
+import {  PlaceDetailPageRoutingModule } from './place-detail-routing.module';
 import { IonicModule } from '@ionic/angular';
 
 @NgModule({

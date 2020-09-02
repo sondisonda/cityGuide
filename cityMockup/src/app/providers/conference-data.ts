@@ -50,7 +50,7 @@ export class ConferenceData {
         });
       });
     });
-
+    console.log(this.data);
     return this.data;
   }
 
