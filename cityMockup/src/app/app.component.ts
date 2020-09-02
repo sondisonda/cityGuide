@@ -18,28 +18,6 @@ import { UserData } from './providers/user-data';
   encapsulation: ViewEncapsulation.None
 })
 export class AppComponent implements OnInit {
-  appPages = [
-    {
-      title: 'Schedule',
-      url: '/schedule',
-      icon: 'calendar'
-    },
-    {
-      title: 'Speakers',
-      url: '/speakers',
-      icon: 'people'
-    },
-    {
-      title: 'Map',
-      url: '/map',
-      icon: 'map'
-    },
-    {
-      title: 'About',
-      url: '/about',
-      icon: 'information-circle'
-    }
-  ];
   loggedIn = false;
   dark = false;
 

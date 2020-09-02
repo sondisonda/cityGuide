@@ -7,16 +7,87 @@
                     <ion-list-header>
                         twoje default city
                     </ion-list-header>
-                    <ion-menu-toggle autoHide="false" *ngFor="let p of appPages; let i = index">
-                        <ion-item [routerLink]="p.url" routerLinkActive="selected" routerDirection="root" detail="false">
-                            <ion-icon slot="start" [name]="p.icon + '-outline'"></ion-icon>
+
+                    <ion-menu-toggle autoHide="false">
+                        <ion-item routerLink="/support" routerLinkActive="active" routerDirection="root" detail="false">
+                            <ion-icon slot="start" name="location"></ion-icon>
                             <ion-label>
-                                {{p.title}}
+                                Miejsca
                             </ion-label>
                         </ion-item>
-
                     </ion-menu-toggle>
 
+                    <ion-menu-toggle autoHide="false">
+                        <ion-item routerLink="/support" routerLinkActive="active" routerDirection="root" detail="false">
+                            <ion-icon slot="start" name="calendar"></ion-icon>
+                            <ion-label>
+                                Wydarzenia
+                            </ion-label>
+                        </ion-item>
+                    </ion-menu-toggle>
+
+                    <ion-menu-toggle autoHide="false">
+                        <ion-item routerLink="/support" routerLinkActive="active" routerDirection="root" detail="false">
+                            <ion-icon slot="start" name="trail-sign"></ion-icon>
+                            <ion-label>
+                                Trasy
+                            </ion-label>
+                        </ion-item>
+                    </ion-menu-toggle>
+
+                    <ion-menu-toggle autoHide="false">
+                        <ion-item routerLink="/support" routerLinkActive="active" routerDirection="root" detail="false">
+                            <ion-icon slot="start" name="headset"></ion-icon>
+                            <ion-label>
+                                Audioprzewodnik
+                            </ion-label>
+                        </ion-item>
+                    </ion-menu-toggle>
+
+                    <ion-menu-toggle autoHide="false">
+                        <ion-item routerLink="/support" routerLinkActive="active" routerDirection="root" detail="false">
+                            <ion-icon slot="start" name="bookmarks"></ion-icon>
+                            <ion-label>
+                                Planer
+                            </ion-label>
+                        </ion-item>
+                    </ion-menu-toggle>
+
+                    <ion-menu-toggle autoHide="false">
+                        <ion-item routerLink="/support" routerLinkActive="active" routerDirection="root" detail="false">
+                            <ion-icon slot="start" name="qr-code"></ion-icon>
+                            <ion-label>
+                                SkanerQR
+                            </ion-label>
+                        </ion-item>
+                    </ion-menu-toggle>
+
+                    <ion-menu-toggle autoHide="false">
+                        <ion-item routerLink="/support" routerLinkActive="active" routerDirection="root" detail="false">
+                            <ion-icon slot="start" name="navigate"></ion-icon>
+                            <ion-label>
+                                Mapa
+                            </ion-label>
+                        </ion-item>
+                    </ion-menu-toggle>
+
+                    <ion-menu-toggle autoHide="false">
+                        <ion-item routerLink="/support" routerLinkActive="active" routerDirection="root" detail="false">
+                            <ion-icon slot="start" name="information"></ion-icon>
+                            <ion-label>
+                                Informacja
+                            </ion-label>
+                        </ion-item>
+                    </ion-menu-toggle>
+
+                    <ion-menu-toggle autoHide="false">
+                        <ion-item routerLink="/support" routerLinkActive="active" routerDirection="root" detail="false">
+                            <ion-icon slot="start" name="refresh"></ion-icon>
+                            <ion-label>
+                                Synchronizacja
+                            </ion-label>
+                        </ion-item>
+                    </ion-menu-toggle>
 
                     <ion-menu-toggle autoHide="false">
                         <ion-item routerLink="/support" routerLinkActive="active" routerDirection="root" detail="false">
@@ -40,7 +111,7 @@
                     <ion-menu-toggle autoHide="false">
                         <ion-item button (click)="openTutorial()" detail="false">
                             <ion-icon slot="start" name="hammer"></ion-icon>
-                            <ion-label>Show Tutorial</ion-label>
+                            <ion-label>Ekran powitalny</ion-label>
                         </ion-item>
                     </ion-menu-toggle>
                 </ion-list>
