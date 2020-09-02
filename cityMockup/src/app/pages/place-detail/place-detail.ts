@@ -5,12 +5,12 @@ import { ActionSheetController } from '@ionic/angular';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 @Component({
-  selector: 'page-speaker-detail',
-  templateUrl: 'speaker-detail.html',
-  styleUrls: ['./speaker-detail.scss'],
+  selector: 'page-place-detail',
+  templateUrl: 'place-detail.html',
+  styleUrls: ['./place-detail.scss'],
 })
-export class SpeakerDetailPage {
-  speaker: any;
+export class PlaceDetailPage {
+  place: any;
 
   constructor(
     private dataProvider: ConferenceData,
@@ -22,11 +22,11 @@ export class SpeakerDetailPage {
 
   ionViewWillEnter() {
     this.dataProvider.load().subscribe((data: any) => {
-      const speakerId = this.route.snapshot.paramMap.get('speakerId');
-      if (data && data.speakers) {
-        for (const speaker of data.speakers) {
-          if (speaker && speaker.id === speakerId) {
-            this.speaker = speaker;
+      const placeId = this.route.snapshot.paramMap.get('placeId');
+      if (data && data.places) {
+        for (const place of data.places) {
+          if (place && place.id === placeId) {
+            this.place = place;
             break;
           }
         }
@@ -41,22 +41,22 @@ export class SpeakerDetailPage {
     );
   }
 
-  async openSpeakerShare(speaker: any) {
+  async openPlaceShare(place: any) {
     const actionSheet = await this.actionSheetCtrl.create({
-      header: 'Share ' + speaker.name,
+      header: 'Share ' + place.name,
       buttons: [
         {
           text: 'Copy Link',
           handler: () => {
             console.log(
-              'Copy link clicked on https://twitter.com/' + speaker.twitter
+              'Copy link clicked on https://twitter.com/' + place.twitter
             );
             if (
               (window as any).cordova &&
               (window as any).cordova.plugins.clipboard
             ) {
               (window as any).cordova.plugins.clipboard.copy(
-                'https://twitter.com/' + speaker.twitter
+                'https://twitter.com/' + place.twitter
               );
             }
           }
@@ -74,24 +74,24 @@ export class SpeakerDetailPage {
     await actionSheet.present();
   }
 
-  async openContact(speaker: any) {
+  async openContact(place: any) {
     const mode = 'ios'; // this.config.get('mode');
 
     const actionSheet = await this.actionSheetCtrl.create({
-      header: 'Contact ' + speaker.name,
+      header: 'Contact ' + place.name,
       buttons: [
         {
-          text: `Email ( ${speaker.email} )`,
+          text: `Email ( ${place.email} )`,
           icon: mode !== 'ios' ? 'mail' : null,
           handler: () => {
-            window.open('mailto:' + speaker.email);
+            window.open('mailto:' + place.email);
           }
         },
         {
-          text: `Call ( ${speaker.phone} )`,
+          text: `Call ( ${place.phone} )`,
           icon: mode !== 'ios' ? 'call' : null,
           handler: () => {
-            window.open('tel:' + speaker.phone);
+            window.open('tel:' + place.phone);
           }
         },
         {

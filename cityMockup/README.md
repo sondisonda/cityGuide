@@ -46,17 +46,17 @@ See [CONTRIBUTING.md](https://github.com/ionic-team/ionic-conference-app/blob/ma
 | -----------------| -----|
 | ![Android Schedule](/resources/screenshots/android-schedule.png) | ![iOS Schedule](/resources/screenshots/ios-schedule.png) |
 
-### [Speakers Page](https://github.com/ionic-team/ionic-conference-app/blob/master/src/app/pages/speaker-list/speaker-list.html)
+### [Places Page](https://github.com/ionic-team/ionic-conference-app/blob/master/src/app/pages/place-list/place-list.html)
 
 | Material Design  | iOS  |
 | -----------------| -----|
-| ![Android Speakers](/resources/screenshots/android-speakers.png) | ![iOS Speakers](/resources/screenshots/ios-speakers.png) |
+| ![Android Places](/resources/screenshots/android-places.png) | ![iOS Place](/resources/screenshots/ios-places.png) |
 
-### [Speaker Detail Page](https://github.com/ionic-team/ionic-conference-app/blob/master/src/app/pages/speaker-detail/speaker-detail.html)
+### [Place Detail Page](https://github.com/ionic-team/ionic-conference-app/blob/master/src/app/pages/place-detail/place-detail.html)
 
 | Material Design  | iOS  |
 | -----------------| -----|
-| ![Android Speaker Detail](/resources/screenshots/android-speaker-detail.png) | ![iOS Speaker Detail](/resources/screenshots/ios-speaker-detail.png) |
+| ![Android Place Detail](/resources/screenshots/android-place-detail.png) | ![iOS Place Detail](/resources/screenshots/ios-place-detail.png) |
 
 ### [About Page](https://github.com/ionic-team/ionic-conference-app/blob/master/src/app/pages/about/about.html)
 

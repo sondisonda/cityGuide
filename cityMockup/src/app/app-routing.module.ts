@@ -34,8 +34,8 @@ const routes: Routes = [
     loadChildren: () => import('./pages/about/about.module').then(m => m.AboutModule)
   },
   {
-    path: 'speakers',
-    loadChildren: () => import('./pages/speaker-list/speaker-list.module').then(m => m.SpeakerListModule)
+    path: 'places',
+    loadChildren: () => import('./pages/place-list/place-list.module').then(m => m.PlaceListModule)
   },
   {
     path: 'nav',
