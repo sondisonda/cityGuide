@@ -30,9 +30,22 @@ const routes: Routes = [
     loadChildren: () => import('./pages/about/about.module').then(m => m.AboutModule)
   },
   {
-    path: 'places',
-    loadChildren: () => import('./pages/place-list/place-list.module').then(m => m.PlaceListModule)
+    path: 'place-list',
+    children: [
+      {
+        path: '',
+        loadChildren: () => import('./pages/place-list/place-list.module').then(m => m.PlaceListModule)
+      },
+      {
+        path: 'session/:sessionId',
+        loadChildren: () => import('./pages/session-detail/session-detail.module').then(m => m.SessionDetailModule)
+      },
+      {
+        path: 'place-details/:speakerId',
+        loadChildren: () => import('./pages/place-detail/place-detail.module').then(m => m.PlaceDetailModule)
+      }]
   },
+
   {
     path: 'nav',
     loadChildren: () => import('./pages/nav-page/nav-page.module').then( m => m.NavPagePageModule)
@@ -45,9 +58,8 @@ const routes: Routes = [
     path: 'event-detail',
     loadChildren: () => import('./pages/event-detail/event-detail.module').then( m => m.EventDetailPageModule)
   },
-
-
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
