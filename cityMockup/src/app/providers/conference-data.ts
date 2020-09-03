@@ -25,25 +25,25 @@ export class ConferenceData {
 
   processData(data: any) {
     // just some good 'ol JS fun with objects and arrays
-    // build up the data by linking places to sessions
+    // build up the data by linking places to events
     this.data = data;
 
     // loop through each day in the events
     this.data.events.forEach((day: any) => {
       // loop through each timeline group in the day
       day.groups.forEach((group: any) => {
-        // loop through each session in the timeline group
-        group.sessions.forEach((session: any) => {
-          session.places = [];
-          if (session.placeNames) {
-            session.placeNames.forEach((placeName: any) => {
+        // loop through each event in the timeline group
+        group.events.forEach((event: any) => {
+          event.places = [];
+          if (event.placeNames) {
+            event.placeNames.forEach((placeName: any) => {
               const place = this.data.places.find(
                 (s: any) => s.name === placeName
               );
               if (place) {
-                session.places.push(place);
-                place.sessions = place.sessions || [];
-                place.sessions.push(session);
+                event.places.push(place);
+                place.events = place.events || [];
+                place.events.push(event);
               }
             });
           }
@@ -63,7 +63,7 @@ export class ConferenceData {
     return this.load().pipe(
       map((data: any) => {
         const day = data.events[dayIndex];
-        day.shownSessions = 0;
+        day.shownEvents = 0;
 
         queryText = queryText.toLowerCase().replace(/,|\.|-/g, ' ');
         const queryWords = queryText.split(' ').filter(w => !!w.trim().length);
@@ -71,14 +71,14 @@ export class ConferenceData {
         day.groups.forEach((group: any) => {
           group.hide = true;
 
-          group.sessions.forEach((session: any) => {
-            // check if this session should show or not
-            this.filterSession(session, queryWords, excludeTracks, segment);
+          group.events.forEach((event: any) => {
+            // check if this event should show or not
+            this.filterEvent(event, queryWords, excludeTracks, segment);
 
-            if (!session.hide) {
-              // if this session is not hidden then this group should show
+            if (!event.hide) {
+              // if this event is not hidden then this group should show
               group.hide = false;
-              day.shownSessions++;
+              day.shownEvents++;
             }
           });
         });
@@ -88,39 +88,39 @@ export class ConferenceData {
     );
   }
 
-  filterSession(
-    session: any,
+  filterEvent(
+    event: any,
     queryWords: string[],
     excludeTracks: any[],
     segment: string
   ) {
     let matchesQueryText = false;
     if (queryWords.length) {
-      // of any query word is in the session name than it passes the query test
+      // of any query word is in the event name than it passes the query test
       queryWords.forEach((queryWord: string) => {
-        if (session.name.toLowerCase().indexOf(queryWord) > -1) {
+        if (event.name.toLowerCase().indexOf(queryWord) > -1) {
           matchesQueryText = true;
         }
       });
     } else {
-      // if there are no query words then this session passes the query test
+      // if there are no query words then this event passes the query test
       matchesQueryText = true;
     }
 
-    // if any of the sessions tracks are not in the
-    // exclude tracks then this session passes the track test
+    // if any of the events tracks are not in the
+    // exclude tracks then this event passes the track test
     let matchesTracks = false;
-    session.tracks.forEach((trackName: string) => {
+    event.tracks.forEach((trackName: string) => {
       if (excludeTracks.indexOf(trackName) === -1) {
         matchesTracks = true;
       }
     });
 
-    // if the segment is 'favorites', but session is not a user favorite
-    // then this session does not pass the segment test
+    // if the segment is 'favorites', but event is not a user favorite
+    // then this event does not pass the segment test
     let matchesSegment = false;
     if (segment === 'favorites') {
-      if (this.user.hasFavorite(session.name)) {
+      if (this.user.hasFavorite(event.name)) {
         matchesSegment = true;
       }
     } else {
@@ -128,7 +128,7 @@ export class ConferenceData {
     }
 
     // all tests must be true if it should not be hidden
-    session.hide = !(matchesQueryText && matchesTracks && matchesSegment);
+    event.hide = !(matchesQueryText && matchesTracks && matchesSegment);
   }
 
   getPlaces() {

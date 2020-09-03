@@ -37,8 +37,8 @@ const routes: Routes = [
         loadChildren: () => import('./pages/place-list/place-list.module').then(m => m.PlaceListModule)
       },
       {
-        path: 'session/:sessionId',
-        loadChildren: () => import('./pages/session-detail/session-detail.module').then(m => m.SessionDetailModule)
+        path: 'event-detail/:eventId',
+        loadChildren: () => import('./pages/event-detail/event-detail.module').then(m => m.EventDetailModule)
       },
       {
         path: 'place-details/:placeId',
@@ -51,13 +51,18 @@ const routes: Routes = [
     loadChildren: () => import('./pages/nav-page/nav-page.module').then( m => m.NavPagePageModule)
   },
   {
-    path: 'events',
-    loadChildren: () => import('./pages/event-list/event-list.module').then( m => m.EventListPageModule)
+    path: 'event-list',
+    children: [
+      {
+        path: '',
+        loadChildren: () => import('./pages/event-list/event-list.module').then( m => m.EventListPageModule)
+      },
+      {
+        path: 'event-detail/:eventId',
+        loadChildren: () => import('./pages/event-detail/event-detail.module').then(m => m.EventDetailModule)
+      }]
   },
   {
-    path: 'event-detail',
-    loadChildren: () => import('./pages/event-detail/event-detail.module').then( m => m.EventDetailPageModule)
-  },  {
     path: 'scanner',
     loadChildren: () => import('./pages/scanner/scanner.module').then( m => m.ScannerPageModule)
   },

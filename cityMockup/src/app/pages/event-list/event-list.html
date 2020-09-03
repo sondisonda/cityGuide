@@ -50,7 +50,7 @@
         </ion-toolbar>
     </ion-header>
 
-    <ion-list #eventList [hidden]="shownSessions === 0">
+    <ion-list #eventList [hidden]="showEvents === 0">
         <ion-item-group *ngFor="let group of groups" [hidden]="group.hide">
             <ion-item-divider sticky>
                 <ion-label>
@@ -58,20 +58,20 @@
                 </ion-label>
             </ion-item-divider>
 
-            <ion-item-sliding *ngFor="let session of group.sessions" #slidingItem [attr.track]="session.tracks[0] | lowercase" [hidden]="session.hide">
-                <ion-item routerLink="/events/session/{{session.id}}">
+            <ion-item-sliding *ngFor="let event of group.events" #slidingItem [attr.track]="event.tracks[0] | lowercase" [hidden]="event.hide">
+                <ion-item routerLink="/event-list/event-detail/{{event.id}}">
                     <ion-label>
-                        <h3>{{session.name}}</h3>
+                        <h3>{{event.name}}</h3>
                         <p>
-                            {{session.timeStart}} &mdash; {{session.timeEnd}}: {{session.location}}
+                            {{event.timeStart}} &mdash; {{event.timeEnd}}: {{event.location}}
                         </p>
                     </ion-label>
                 </ion-item>
                 <ion-item-options>
-                    <ion-item-option color="favorite" (click)="addFavorite(slidingItem, session)" *ngIf="segment === 'all'">
+                    <ion-item-option color="favorite" (click)="addFavorite(slidingItem, event)" *ngIf="segment === 'all'">
                         Favorite
                     </ion-item-option>
-                    <ion-item-option color="danger" (click)="removeFavorite(slidingItem, session, 'Remove Favorite')" *ngIf="segment === 'favorites'">
+                    <ion-item-option color="danger" (click)="removeFavorite(slidingItem, event, 'Remove Favorite')" *ngIf="segment === 'favorites'">
                         Remove
                     </ion-item-option>
                 </ion-item-options>
@@ -79,27 +79,8 @@
         </ion-item-group>
     </ion-list>
 
-    <ion-list-header [hidden]="shownSessions > 0">
-        No Sessions Found
+    <ion-list-header [hidden]="showEvents > 0">
+        No Events Found
     </ion-list-header>
 
-    <ion-fab slot="fixed" vertical="bottom" horizontal="end" #fab>
-        <ion-fab-button>
-            <ion-icon name="share-social"></ion-icon>
-        </ion-fab-button>
-        <ion-fab-list side="top">
-            <ion-fab-button color="vimeo" (click)="openSocial('Vimeo', fab)">
-                <ion-icon name="logo-vimeo"></ion-icon>
-            </ion-fab-button>
-            <ion-fab-button color="instagram" (click)="openSocial('Instagram', fab)">
-                <ion-icon name="logo-instagram"></ion-icon>
-            </ion-fab-button>
-            <ion-fab-button color="twitter" (click)="openSocial('Twitter', fab)">
-                <ion-icon name="logo-twitter"></ion-icon>
-            </ion-fab-button>
-            <ion-fab-button color="facebook" (click)="openSocial('Facebook', fab)">
-                <ion-icon name="logo-facebook"></ion-icon>
-            </ion-fab-button>
-        </ion-fab-list>
-    </ion-fab>
 </ion-content>

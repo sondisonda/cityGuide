@@ -5,12 +5,12 @@ import { ActivatedRoute } from '@angular/router';
 import { UserData } from '../../providers/user-data';
 
 @Component({
-  selector: 'page-session-detail',
-  styleUrls: ['./session-detail.scss'],
-  templateUrl: 'session-detail.html'
+  selector: 'page-event-detail',
+  styleUrls: ['./event-detail.scss'],
+  templateUrl: 'event-detail.html'
 })
-export class SessionDetailPage {
-  session: any;
+export class EventDetailPage {
+  event: any;
   isFavorite = false;
   defaultHref = '';
 
@@ -23,15 +23,15 @@ export class SessionDetailPage {
   ionViewWillEnter() {
     this.dataProvider.load().subscribe((data: any) => {
       if (data && data.events && data.events[0] && data.events[0].groups) {
-        const sessionId = this.route.snapshot.paramMap.get('sessionId');
+        const eventId = this.route.snapshot.paramMap.get('eventId');
         for (const group of data.events[0].groups) {
-          if (group && group.sessions) {
-            for (const session of group.sessions) {
-              if (session && session.id === sessionId) {
-                this.session = session;
+          if (group && group.eventns) {
+            for (const event of group.events) {
+              if (event && event.id === eventId) {
+                this.event = event;
 
                 this.isFavorite = this.userProvider.hasFavorite(
-                  this.session.name
+                  this.event.name
                 );
 
                 break;
@@ -44,24 +44,24 @@ export class SessionDetailPage {
   }
 
   ionViewDidEnter() {
-    this.defaultHref = `/events`;
+    this.defaultHref = `/event-list`;
   }
 
-  sessionClick(item: string) {
+  eventClick(item: string) {
     console.log('Clicked', item);
   }
 
   toggleFavorite() {
-    if (this.userProvider.hasFavorite(this.session.name)) {
-      this.userProvider.removeFavorite(this.session.name);
+    if (this.userProvider.hasFavorite(this.event.name)) {
+      this.userProvider.removeFavorite(this.event.name);
       this.isFavorite = false;
     } else {
-      this.userProvider.addFavorite(this.session.name);
+      this.userProvider.addFavorite(this.event.name);
       this.isFavorite = true;
     }
   }
 
-  shareSession() {
-    console.log('Clicked share session');
+  shareevent() {
+    console.log('Clicked share event');
   }
 }
