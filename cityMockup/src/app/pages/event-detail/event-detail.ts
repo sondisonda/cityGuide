@@ -25,7 +25,7 @@ export class EventDetailPage {
       if (data && data.events && data.events[0] && data.events[0].groups) {
         const eventId = this.route.snapshot.paramMap.get('eventId');
         for (const group of data.events[0].groups) {
-          if (group && group.eventns) {
+          if (group && group.events) {
             for (const event of group.events) {
               if (event && event.id === eventId) {
                 this.event = event;
@@ -44,7 +44,7 @@ export class EventDetailPage {
   }
 
   ionViewDidEnter() {
-    this.defaultHref = `/event-list`;
+    this.defaultHref = '/event-list';
   }
 
   eventClick(item: string) {

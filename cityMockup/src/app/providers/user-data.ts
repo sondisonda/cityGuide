@@ -14,7 +14,7 @@ export class UserData {
     public storage: Storage
   ) { }
 
-  hasFavorite(seventName: string): boolean {
+  hasFavorite(eventName: string): boolean {
     return (this.favorites.indexOf(eventName) > -1);
   }
 
