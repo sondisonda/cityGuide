@@ -35,9 +35,9 @@
 
                     <ion-card-content>
                         <ion-list lines="none">
-                            <ion-item *ngFor="let session of place.sessions" detail="false" routerLink="/place-list/session/{{session.id}}">
+                            <ion-item *ngFor="let event of place.events" detail="false" routerLink="/place-list/event-detail/{{event.id}}">
                                 <ion-label>
-                                    <h3>{{session.name}}</h3>
+                                    <h3>{{event.name}}</h3>
                                 </ion-label>
                             </ion-item>
 

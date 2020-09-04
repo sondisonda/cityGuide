@@ -20,7 +20,7 @@ export class EventListPage implements OnInit {
   queryText = '';
   segment = 'all';
   excludeTracks: any = [];
-  shownSessions: any = [];
+  showEvents: any = [];
   groups: any = [];
   confDate: string;
   showSearchbar: boolean;
@@ -50,7 +50,7 @@ export class EventListPage implements OnInit {
     }
 
     this.confData.getTimeline(this.dayIndex, this.queryText, this.excludeTracks, this.segment).subscribe((data: any) => {
-      this.shownSessions = data.shownSessions;
+      this.showEvents = data.showEvents;
       this.groups = data.groups;
     });
   }
@@ -71,20 +71,20 @@ export class EventListPage implements OnInit {
     }
   }
 
-  async addFavorite(slidingItem: HTMLIonItemSlidingElement, sessionData: any) {
-    if (this.user.hasFavorite(sessionData.name)) {
+  async addFavorite(slidingItem: HTMLIonItemSlidingElement, eventData: any) {
+    if (this.user.hasFavorite(eventData.name)) {
       // Prompt to remove favorite
-      this.removeFavorite(slidingItem, sessionData, 'Favorite already added');
+      this.removeFavorite(slidingItem, eventData, 'Favorite already added');
     } else {
       // Add as a favorite
-      this.user.addFavorite(sessionData.name);
+      this.user.addFavorite(eventData.name);
 
       // Close the open item
       slidingItem.close();
 
       // Create a toast
       const toast = await this.toastCtrl.create({
-        header: `${sessionData.name} was successfully added as a favorite.`,
+        header: `${eventData.name} was successfully added as a favorite.`,
         duration: 3000,
         buttons: [{
           text: 'Close',
@@ -98,15 +98,15 @@ export class EventListPage implements OnInit {
 
   }
 
-  async removeFavorite(slidingItem: HTMLIonItemSlidingElement, sessionData: any, title: string) {
+  async removeFavorite(slidingItem: HTMLIonItemSlidingElement, eventData: any, title: string) {
     const alert = await this.alertCtrl.create({
       header: title,
-      message: 'Would you like to remove this session from your favorites?',
+      message: 'Would you like to remove this event from your favorites?',
       buttons: [
         {
           text: 'Cancel',
           handler: () => {
-            // they clicked the cancel button, do not remove the session
+            // they clicked the cancel button, do not remove the event
             // close the sliding item and hide the option buttons
             slidingItem.close();
           }
@@ -114,8 +114,8 @@ export class EventListPage implements OnInit {
         {
           text: 'Remove',
           handler: () => {
-            // they want to remove this session from their favorites
-            this.user.removeFavorite(sessionData.name);
+            // they want to remove this event from their favorites
+            this.user.removeFavorite(eventData.name);
             this.updateEventList();
 
             // close the sliding item and hide the option buttons

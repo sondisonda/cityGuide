@@ -14,16 +14,16 @@ export class UserData {
     public storage: Storage
   ) { }
 
-  hasFavorite(sessionName: string): boolean {
-    return (this.favorites.indexOf(sessionName) > -1);
+  hasFavorite(eventName: string): boolean {
+    return (this.favorites.indexOf(eventName) > -1);
   }
 
-  addFavorite(sessionName: string): void {
-    this.favorites.push(sessionName);
+  addFavorite(eventName: string): void {
+    this.favorites.push(eventName);
   }
 
-  removeFavorite(sessionName: string): void {
-    const index = this.favorites.indexOf(sessionName);
+  removeFavorite(eventName: string): void {
+    const index = this.favorites.indexOf(eventName);
     if (index > -1) {
       this.favorites.splice(index, 1);
     }

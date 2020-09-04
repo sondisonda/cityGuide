@@ -1,20 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 
-import { IonicModule } from '@ionic/angular';
-
+import { EventDetailPage } from './event-detail';
 import { EventDetailPageRoutingModule } from './event-detail-routing.module';
-
-import { EventDetailPage } from './event-detail.page';
+import { IonicModule } from '@ionic/angular';
 
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule,
     IonicModule,
     EventDetailPageRoutingModule
   ],
-  declarations: [EventDetailPage]
+  declarations: [
+    EventDetailPage,
+  ]
 })
-export class EventDetailPageModule {}
+export class EventDetailModule { }

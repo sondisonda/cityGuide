@@ -3,25 +3,25 @@
         "date": "2047-05-17",
         "groups": [{
                 "time": "8:00 am",
-                "sessions": [{
+                "events": [{
                     "name": "Breakfast",
                     "timeStart": "8:00 am",
                     "timeEnd": "9:00 am",
                     "location": "Dining Hall",
-                    "tracks": ["Food"],
+                    "tracks": ["Gastronomiczne"],
                     "id": "1"
                 }]
             },
             {
                 "time": "9:15 am",
-                "sessions": [{
+                "events": [{
                         "name": "Getting Started with Ionic",
                         "location": "Hall 2",
                         "description": "Mobile devices and browsers are now advanced enough that developers can build native-quality mobile apps using open web technologies like HTML5, Javascript, and CSS. In this talk, we’ll provide background on why and how we created Ionic, the design decisions made as we integrated Ionic with Angular, and the performance considerations for mobile platforms that our team had to overcome. We’ll also review new and upcoming Ionic features, and talk about the hidden powers and benefits of combining mobile app development and Angular.",
                         "placeNames": ["Ted Turtle"],
                         "timeStart": "9:30 am",
                         "timeEnd": "9:45 am",
-                        "tracks": ["Ionic"],
+                        "tracks": ["Koncerty"],
                         "id": "2"
                     },
                     {
@@ -31,7 +31,7 @@
                         "placeNames": ["Rachel Rabbit"],
                         "timeStart": "9:45 am",
                         "timeEnd": "10:00 am",
-                        "tracks": ["Tooling"],
+                        "tracks": ["Sportowe"],
                         "id": "3"
                     },
                     {
@@ -41,21 +41,21 @@
                         "placeNames": ["Ellie Elephant"],
                         "timeStart": "9:15 am",
                         "timeEnd": "9:30 am",
-                        "tracks": ["Ionic"],
+                        "tracks": ["Koncerty"],
                         "id": "4"
                     }
                 ]
             },
             {
                 "time": "10:00 am",
-                "sessions": [{
+                "events": [{
                         "name": "Migrating to Ionic",
                         "location": "Hall 1",
                         "description": "Mobile devices and browsers are now advanced enough that developers can build native-quality mobile apps using open web technologies like HTML5, Javascript, and CSS. In this talk, we’ll provide background on why and how we created Ionic, the design decisions made as we integrated Ionic with Angular, and the performance considerations for mobile platforms that our team had to overcome. We’ll also review new and upcoming Ionic features, and talk about the hidden powers and benefits of combining mobile app development and Angular.",
                         "placeNames": ["Eva Eagle", "Lionel Lion"],
                         "timeStart": "10:00 am",
                         "timeEnd": "10:15 am",
-                        "tracks": ["Ionic"],
+                        "tracks": ["Koncerty"],
                         "id": "5"
                     },
                     {
@@ -65,7 +65,7 @@
                         "placeNames": ["Rachel Rabbit"],
                         "timeStart": "10:15 am",
                         "timeEnd": "10:30 am",
-                        "tracks": ["Angular"],
+                        "tracks": ["Teatralne"],
                         "id": "6"
                     },
                     {
@@ -75,7 +75,7 @@
                         "placeNames": ["Isabella Iguana", "Eva Eagle"],
                         "timeStart": "10:15 am",
                         "timeEnd": "10:30 am",
-                        "tracks": ["Design"],
+                        "tracks": ["Sportowe"],
                         "id": "7"
                     },
                     {
@@ -85,21 +85,21 @@
                         "placeNames": ["Charlie Cheetah"],
                         "timeStart": "10:45 am",
                         "timeEnd": "11:00 am",
-                        "tracks": ["Services"],
+                        "tracks": ["Gastronomiczne"],
                         "id": "8"
                     }
                 ]
             },
             {
                 "time": "11:00 am",
-                "sessions": [{
+                "events": [{
                         "name": "Ionic Workshop",
                         "location": "Hall 1",
                         "description": "Mobile devices and browsers are now advanced enough that developers can build native-quality mobile apps using open web technologies like HTML5, Javascript, and CSS. In this talk, we’ll provide background on why and how we created Ionic, the design decisions made as we integrated Ionic with Angular, and the performance considerations for mobile platforms that our team had to overcome. We’ll also review new and upcoming Ionic features, and talk about the hidden powers and benefits of combining mobile app development and Angular.",
                         "placeNames": ["Karl Kitten", "Lionel Lion"],
                         "timeStart": "11:00 am",
                         "timeEnd": "11:45 am",
-                        "tracks": ["Workshop"],
+                        "tracks": ["Koncerty"],
                         "id": "9"
                     },
                     {
@@ -109,7 +109,7 @@
                         "placeNames": ["Lionel Lion", "Gino Giraffe"],
                         "timeStart": "11:30 am",
                         "timeEnd": "11:50 am",
-                        "tracks": ["Communication"],
+                        "tracks": ["Gastronomiczne"],
                         "id": "10"
                     },
                     {
@@ -119,33 +119,33 @@
                         "placeNames": ["Rachel Rabbit", "Eva Eagle"],
                         "timeStart": "11:30 am",
                         "timeEnd": "12:00 pm",
-                        "tracks": ["Navigation"],
+                        "tracks": ["Gastronomiczne"],
                         "id": "11"
                     }
                 ]
             },
             {
                 "time": "12:00 pm",
-                "sessions": [{
+                "events": [{
                     "name": "Lunch",
                     "location": "Dining Hall",
                     "description": "Come grab lunch with all the Ionic fanatics and talk all things Ionic",
                     "timeStart": "12:00 pm",
                     "timeEnd": "1:00 pm",
-                    "tracks": ["Food"],
+                    "tracks": ["Gastronomiczne"],
                     "id": "12"
                 }]
             },
             {
                 "time": "1:00 pm",
-                "sessions": [{
+                "events": [{
                         "name": "Ionic in the Enterprise",
                         "location": "Hall 1",
                         "description": "Mobile devices and browsers are now advanced enough that developers can build native-quality mobile apps using open web technologies like HTML5, Javascript, and CSS. In this talk, we’ll provide background on why and how we created Ionic, the design decisions made as we integrated Ionic with Angular, and the performance considerations for mobile platforms that our team had to overcome. We’ll also review new and upcoming Ionic features, and talk about the hidden powers and benefits of combining mobile app development and Angular.",
                         "placeNames": ["Paul Puppy"],
                         "timeStart": "1:00 pm",
                         "timeEnd": "1:15 pm",
-                        "tracks": ["Communication"],
+                        "tracks": ["Koncerty"],
                         "id": "13"
                     },
                     {
@@ -155,7 +155,7 @@
                         "placeNames": ["Gino Giraffe"],
                         "timeStart": "1:15 pm",
                         "timeEnd": "1:30 pm",
-                        "tracks": ["Communication"],
+                        "tracks": ["Sportowe"],
                         "id": "14"
                     },
                     {
@@ -165,21 +165,21 @@
                         "placeNames": ["Molly Mouse", "Burt Bear"],
                         "timeStart": "1:30 pm",
                         "timeEnd": "2:00 pm",
-                        "tracks": ["Services"],
+                        "tracks": ["Sportowe"],
                         "id": "15"
                     }
                 ]
             },
             {
                 "time": "2:00 pm",
-                "sessions": [{
+                "events": [{
                         "name": "Push Notifications in Ionic",
                         "location": "Hall 2",
                         "description": "Mobile devices and browsers are now advanced enough that developers can build native-quality mobile apps using open web technologies like HTML5, Javascript, and CSS. In this talk, we’ll provide background on why and how we created Ionic, the design decisions made as we integrated Ionic with Angular, and the performance considerations for mobile platforms that our team had to overcome. We’ll also review new and upcoming Ionic features, and talk about the hidden powers and benefits of combining mobile app development and Angular.",
                         "placeNames": ["Burt Bear", "Charlie Cheetah"],
                         "timeStart": "2:00 pm",
                         "timeEnd": "2:30 pm",
-                        "tracks": ["Services"],
+                        "tracks": ["Koncerty"],
                         "id": "16"
                     },
                     {
@@ -189,7 +189,7 @@
                         "placeNames": ["Donald Duck"],
                         "timeStart": "2:30 pm",
                         "timeEnd": "2:45 pm",
-                        "tracks": ["Documentation"],
+                        "tracks": ["Koncerty"],
                         "id": "17"
                     },
                     {
@@ -199,21 +199,21 @@
                         "placeNames": ["Isabella Iguana", "Ellie Elephant"],
                         "timeStart": "2:45 pm",
                         "timeEnd": "3:00 pm",
-                        "tracks": ["Design"],
+                        "tracks": ["Sportowe"],
                         "id": "18"
                     }
                 ]
             },
             {
                 "time": "3:00",
-                "sessions": [{
+                "events": [{
                         "name": "Angular Directives in Ionic",
                         "location": "Hall 1",
                         "description": "Mobile devices and browsers are now advanced enough that developers can build native-quality mobile apps using open web technologies like HTML5, Javascript, and CSS. In this talk, we’ll provide background on why and how we created Ionic, the design decisions made as we integrated Ionic with Angular, and the performance considerations for mobile platforms that our team had to overcome. We’ll also review new and upcoming Ionic features, and talk about the hidden powers and benefits of combining mobile app development and Angular.",
                         "placeNames": ["Ted Turtle"],
                         "timeStart": "3:00 pm",
                         "timeEnd": "3:30 pm",
-                        "tracks": ["Angular"],
+                        "tracks": ["Teatralne"],
                         "id": "19"
                     },
                     {
@@ -223,7 +223,7 @@
                         "placeNames": ["Rachel Rabbit"],
                         "timeStart": "3:30 pm",
                         "timeEnd": "3:45 pm",
-                        "tracks": ["Navigation"],
+                        "tracks": ["Koncerty"],
                         "id": "20"
                     }
                 ]
