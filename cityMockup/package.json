@@ -88,9 +88,7 @@
       "cordova-plugin-inappbrowser": {},
       "cordova-plugin-splashscreen": {},
       "cordova-plugin-whitelist": {},
-      "cordova-plugin-ionic-webview": {
-        "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+"
-      },
+      "cordova-plugin-ionic-webview": {},
       "cordova-plugin-statusbar": {},
       "cordova-plugin-ionic-keyboard": {},
       "cordova-plugin-qrscanner": {}

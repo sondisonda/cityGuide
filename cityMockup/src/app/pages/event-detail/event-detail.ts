@@ -61,7 +61,7 @@ export class EventDetailPage {
     }
   }
 
-  shareEvent() {
+  shareevent() {
     console.log('Clicked share event');
   }
 }

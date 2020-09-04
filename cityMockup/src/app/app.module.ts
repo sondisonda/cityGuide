@@ -12,7 +12,6 @@ import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { FormsModule } from '@angular/forms';
-import { QRScanner } from '@ionic-native/qr-scanner/ngx';
 
 @NgModule({
   imports: [
@@ -27,7 +26,7 @@ import { QRScanner } from '@ionic-native/qr-scanner/ngx';
     })
   ],
   declarations: [AppComponent],
-  providers: [InAppBrowser, SplashScreen, StatusBar, QRScanner],
+  providers: [InAppBrowser, SplashScreen, StatusBar],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
