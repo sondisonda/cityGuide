@@ -4,7 +4,6 @@ import { AlertController, IonList, IonRouterOutlet, LoadingController, ModalCont
 
 import { EventFilterPage } from '../event-filter/event-filter';
 import { ConferenceData } from '../../providers/conference-data';
-import { UserData } from '../../providers/user-data';
 
 @Component({
   selector: 'page-event-list',
@@ -20,7 +19,7 @@ export class EventListPage implements OnInit {
   queryText = '';
   segment = 'all';
   excludeTracks: any = [];
-  showEvents: any = [];
+  shownEvents: any = [];
   groups: any = [];
   confDate: string;
   showSearchbar: boolean;
@@ -33,7 +32,6 @@ export class EventListPage implements OnInit {
     public router: Router,
     public routerOutlet: IonRouterOutlet,
     public toastCtrl: ToastController,
-    public user: UserData,
     public config: Config
   ) { }
 
@@ -50,7 +48,7 @@ export class EventListPage implements OnInit {
     }
 
     this.confData.getTimeline(this.dayIndex, this.queryText, this.excludeTracks, this.segment).subscribe((data: any) => {
-      this.showEvents = data.showEvents;
+      this.shownEvents = data.shownEvents;
       this.groups = data.groups;
     });
   }
@@ -71,62 +69,8 @@ export class EventListPage implements OnInit {
     }
   }
 
-  async addFavorite(slidingItem: HTMLIonItemSlidingElement, eventData: any) {
-    if (this.user.hasFavorite(eventData.name)) {
-      // Prompt to remove favorite
-      this.removeFavorite(slidingItem, eventData, 'Favorite already added');
-    } else {
-      // Add as a favorite
-      this.user.addFavorite(eventData.name);
 
-      // Close the open item
-      slidingItem.close();
-
-      // Create a toast
-      const toast = await this.toastCtrl.create({
-        header: `${eventData.name} was successfully added as a favorite.`,
-        duration: 3000,
-        buttons: [{
-          text: 'Close',
-          role: 'cancel'
-        }]
-      });
-
-      // Present the toast at the bottom of the page
-      await toast.present();
-    }
-
-  }
-
-  async removeFavorite(slidingItem: HTMLIonItemSlidingElement, eventData: any, title: string) {
-    const alert = await this.alertCtrl.create({
-      header: title,
-      message: 'Would you like to remove this event from your favorites?',
-      buttons: [
-        {
-          text: 'Cancel',
-          handler: () => {
-            // they clicked the cancel button, do not remove the event
-            // close the sliding item and hide the option buttons
-            slidingItem.close();
-          }
-        },
-        {
-          text: 'Remove',
-          handler: () => {
-            // they want to remove this event from their favorites
-            this.user.removeFavorite(eventData.name);
-            this.updateEventList();
-
-            // close the sliding item and hide the option buttons
-            slidingItem.close();
-          }
-        }
-      ]
-    });
-    // now present the alert on top of all other content
-    await alert.present();
-  }
+  
 
   async openSocial(network: string, fab: HTMLIonFabElement) {
     const loading = await this.loadingCtrl.create({

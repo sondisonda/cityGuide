@@ -3,41 +3,22 @@
         <ion-buttons slot="start">
             <ion-back-button defaultHref="nav"></ion-back-button>
         </ion-buttons>
-        <ion-buttons *ngIf="!showSearchbar" slot="end">
+        <ion-buttons slot="end">
             <ion-menu-button></ion-menu-button>
         </ion-buttons>
-        <ion-segment *ngIf="ios" [(ngModel)]="segment" (ionChange)="updateEventList()">
-            <ion-segment-button value="all">
-                All
-            </ion-segment-button>
-            <ion-segment-button value="favorites">
-                Favorites
-            </ion-segment-button>
-        </ion-segment>
+
         <ion-title *ngIf="!ios && !showSearchbar">Wydarzenia</ion-title>
-        <ion-searchbar *ngIf="showSearchbar" showCancelButton="always" [(ngModel)]="queryText" (ionChange)="updateEventList()" (ionCancel)="showSearchbar = false" placeholder="Search"></ion-searchbar>
         <ion-buttons slot="start">
-            <ion-button *ngIf="!ios && !showSearchbar" (click)="showSearchbar = true">
-                <ion-icon slot="icon-only" name="search"></ion-icon>
-            </ion-button>
-            <ion-button *ngIf="!showSearchbar" (click)="presentFilter()">
+            <ion-button  (click)="presentFilter()">
                 <span *ngIf="ios">Filter</span>
                 <span *ngIf="!ios">
         <ion-icon slot="icon-only" name="options"></ion-icon>
       </span>
             </ion-button>
         </ion-buttons>
+
     </ion-toolbar>
-    <ion-toolbar *ngIf="!ios">
-       <ion-segment [(ngModel)]="segment" (ionChange)="updateEventList()">
-            <ion-segment-button value="all">
-                All
-            </ion-segment-button>
-            <ion-segment-button value="favorites">
-                Favorites
-            </ion-segment-button>
-        </ion-segment> -->
-    </ion-toolbar>
+
 </ion-header>
 
 <ion-content fullscreen="true">
@@ -45,9 +26,7 @@
         <ion-toolbar>
             <ion-title size="large">Wydarzenia</ion-title>
         </ion-toolbar>
-        <ion-toolbar>
-            <ion-searchbar [(ngModel)]="queryText" (ionChange)="updateEventList()" placeholder="Search"></ion-searchbar>
-        </ion-toolbar>
+   
     </ion-header>
 
     <ion-list #eventList [hidden]="showEvents === 0">
@@ -79,7 +58,7 @@
         </ion-item-group>
     </ion-list>
 
-    <ion-list-header [hidden]="showEvents > 0">
+    <ion-list-header [hidden]="shownEvents > 0">
         No Events Found
     </ion-list-header>
 
