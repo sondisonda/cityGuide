@@ -62,6 +62,18 @@ const routes: Routes = [
     path: 'scanner',
     loadChildren: () => import('./pages/scanner/scanner.module').then( m => m.ScannerPageModule)
   },
+  {
+    path: 'trail-list',    children: [
+      {
+        path: '',
+        loadChildren: () => import('./pages/trail-list/trail-list.module').then( m => m.TrailListPageModule)
+      },
+      {
+        path: 'trail-detail/:trailId',
+        loadChildren: () => import('./pages/trail-detail/trail-detail.module').then( m => m.TrailDetailPageModule)
+      }]
+  },
+
 
 ];
 
