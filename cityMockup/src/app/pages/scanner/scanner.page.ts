@@ -10,7 +10,10 @@ import { ToastController } from 'ionic-angular';
 export class ScannerPage implements OnInit {
   scanSubscription;
 
-  constructor(private qrScanner: QRScanner, private toastCtrl: ToastController) { }
+  constructor(private qrScanner: QRScanner, 
+    // private toastCtrl: ToastController
+    ) 
+    { }
 
   ngOnInit() {}
    
@@ -27,13 +30,13 @@ export class ScannerPage implements OnInit {
         if (status.authorized) {
           this.qrScanner.show();
           this.scanSubscription = this.qrScanner.scan().subscribe((text:string) => {
-            let toast = this.toastCtrl.create({
-              message: `${text}`,
-              position: 'top',
-              duration: 3000,
-              closeButtonText: 'OK'
-            });
-            toast.present();
+            // let toast = this.toastCtrl.create({
+            //   message: `${text}`,
+            //   position: 'top',
+            //   duration: 3000,
+            //   closeButtonText: 'OK'
+            // });
+            // toast.present();
           });
         } else {
           console.error('Permission Denied', status);
