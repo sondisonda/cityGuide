@@ -14,7 +14,7 @@
               Favorites
           </ion-segment-button>
       </ion-segment>
-      <ion-title *ngIf="!ios && !showSearchbar">Wydarzenia</ion-title>
+      <ion-title *ngIf="!ios && !showSearchbar">Trasy</ion-title>
       <ion-searchbar *ngIf="showSearchbar" showCancelButton="always" [(ngModel)]="queryText" (ionChange)="updateEventList()" (ionCancel)="showSearchbar = false" placeholder="Search"></ion-searchbar>
       <ion-buttons slot="start">
           <ion-button *ngIf="!ios && !showSearchbar" (click)="showSearchbar = true">
@@ -43,7 +43,7 @@
 <ion-content fullscreen="true">
   <ion-header collapse="condense">
       <ion-toolbar>
-          <ion-title size="large">Wydarzenia</ion-title>
+          <ion-title size="large">Trasy</ion-title>
       </ion-toolbar>
       <ion-toolbar>
           <ion-searchbar [(ngModel)]="queryText" (ionChange)="updateEventList()" placeholder="Search"></ion-searchbar>
